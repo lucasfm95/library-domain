@@ -23,7 +23,7 @@ public class AccountDataTest
             .RuleFor(property => property.BankName, f => f.Name.FullName())
             .RuleFor(property => property.Number, f => f.Finance.Account())
             .RuleFor(property => property.Customer, f => customerData)
-            .RuleFor(property => property.Transactions, func => transactionAccountData.Generate(500000000))
+            .RuleFor(property => property.Transactions, func => transactionAccountData.Generate(500))
             .Generate(500);
 
     }
