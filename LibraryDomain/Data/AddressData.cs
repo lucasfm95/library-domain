@@ -6,6 +6,7 @@ namespace LibraryDomain.Data
 		public string? Street { get; set; }
 		public string? CityName { get; set; }
 		public string? State { get; set; }
+		public string? ZipCode { get; set; }
 		public DateTime CreatedAt { get; set; }
 		public DateTime UpdatedAt { get; set; }
 	}
