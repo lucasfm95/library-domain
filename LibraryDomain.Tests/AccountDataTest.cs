@@ -12,7 +12,7 @@ public class AccountDataTest
         var commercialEstablishment = new Faker<CommercialEstablishmentData>("pt_BR")
             .RuleFor(property => property.DocumentNumber, func => func.Finance.Account(14))
             .RuleFor(property => property.CreatedAt, func => func.Date.Recent())
-            .RuleFor(property => property.Name, func => func.Name.FullName());
+            .RuleFor(property => property.Name, func => func.Company.CompanyName());
 
         var transactionAccountData = new Faker<TransactionAccountData>("pt_BR")
             .RuleFor(property => property.CommercialEstablishment, func => commercialEstablishment)
