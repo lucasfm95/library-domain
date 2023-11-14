@@ -30,15 +30,15 @@ public class GeneratorDataObject
 
         var transactionData = new Faker<TransactionData>("pt_BR")
             .RuleFor(property => property.Type, func => func.Random.Int(1,2).ToString())
-            .RuleFor(property => property.TransactionsAccount, transactionAccountData.Generate(500));
+            .RuleFor(property => property.TransactionsAccount, transactionAccountData.Generate(50));
 
         var accountsData = new Faker<AccountData>("pt_BR")
             .RuleFor(property => property.Balance, func => func.Random.Int(1,100000))
             .RuleFor(property => property.BankName, func => func.Name.FullName())
             .RuleFor(property => property.Number, func => func.Finance.Account())
             .RuleFor(property => property.Customer, customerData)
-            .RuleFor(property => property.Transactions, transactionData.Generate(500))
-            .Generate(500);
+            .RuleFor(property => property.Transactions, transactionData.Generate(50))
+            .Generate(50);
 
         return accountsData;
     } 
